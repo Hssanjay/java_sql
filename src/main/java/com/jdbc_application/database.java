@@ -18,11 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class database {
-    String password = "sanjay";
+    String password = "sanjay@123";
 
     public void put_data(String Username, String Password, String date_of_birth) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", this.password);
+        Connection con = DriverManager.getConnection("jdbc:mysql://http://3.22.233.64:3306/", "root1", this.password);
         Statement stmt1 = con.createStatement();
         stmt1.executeUpdate("CREATE DATABASE IF NOT EXISTS servlet_application ;");
         stmt1.executeUpdate("USE servlet_application;");
