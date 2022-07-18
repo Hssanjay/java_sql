@@ -54,7 +54,7 @@ public class database {
     public void get_data(HttpServletRequest request, HttpServletResponse response)
             throws ClassNotFoundException, SQLException, IOException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_application", "root",
+        Connection con = DriverManager.getConnection("jdbc:mysql://http://3.22.233.64:3306/servlet_application", "root1",
                 this.password);
         Statement stmt = con.createStatement();
         ResultSet rs1 = stmt.executeQuery("SELECT * FROM store_user ORDER BY date_register;");
@@ -71,7 +71,7 @@ public class database {
     public void login(String username, String password, HttpServletRequest request, HttpServletResponse response)
             throws ClassNotFoundException, SQLException, IOException, ServletException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_application", "root",
+        Connection con = DriverManager.getConnection("jdbc:mysql://http://3.22.233.64:3306//servlet_application", "root1",
                 this.password);
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM store_user WHERE Username=" + "'" + username + "';");
@@ -103,7 +103,7 @@ public class database {
 
     public void delete_row(String username) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_application", "root",
+        Connection con = DriverManager.getConnection("jdbc:mysql://http://3.22.233.64/:3306/servlet_application", "root1",
                 this.password);
         Statement stmt = con.createStatement();
 
@@ -119,7 +119,7 @@ public class database {
     public void update_row(String username, String oldPassword, String newPassword)
             throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_application", "root",
+        Connection con = DriverManager.getConnection("jdbc:mysql://http://3.22.233.64//servlet_application", "root1",
                 this.password);
         Statement stmt = con.createStatement();
 
