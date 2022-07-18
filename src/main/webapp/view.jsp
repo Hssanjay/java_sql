@@ -17,14 +17,14 @@
 
 <h2>The databse have these users registered through this form.</h2>
 
-<%! String password="sanjay"; %>
+<%! String password="sanjay@123"; %>
 
 <% 
     // this makes the previous page out of the cached pages.
     response.setHeader("Cache-control","no-cache, no-store, must-revalidate");
     
     Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_application","root",password);
+    Connection con=DriverManager.getConnection("jdbc:mysql://http://3.22.233.64:3306/servlet_application","root1",password);
     Statement stmt=con.createStatement();
     ResultSet rs=stmt.executeQuery("SELECT * FROM store_user ORDER BY date_register;"); 
 %>
