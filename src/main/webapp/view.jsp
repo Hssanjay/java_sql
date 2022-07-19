@@ -24,7 +24,7 @@
     response.setHeader("Cache-control","no-cache, no-store, must-revalidate");
     
     Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con=DriverManager.getConnection("jdbc:mysql:3.144.240.183:3306/servlet_application","root",password);
+    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_application","root",password);
     Statement stmt=con.createStatement();
     ResultSet rs=stmt.executeQuery("SELECT * FROM store_user ORDER BY date_register;"); 
 %>
