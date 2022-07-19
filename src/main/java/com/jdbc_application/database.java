@@ -21,7 +21,7 @@ public class database {
     String password = "password";
 
     public void put_data(String Username, String Password, String date_of_birth) throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         Connection con = DriverManager.getConnection("jdbc:mysql:3.144.240.183:3306/", "root", this.password);
         Statement stmt1 = con.createStatement();
         stmt1.executeUpdate("CREATE DATABASE IF NOT EXISTS servlet_application ;");
@@ -53,7 +53,7 @@ public class database {
 
     public void get_data(HttpServletRequest request, HttpServletResponse response)
             throws ClassNotFoundException, SQLException, IOException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         Connection con = DriverManager.getConnection("jdbc:mysql:3.144.240.183:3306/servlet_application", "root",
                 this.password);
         Statement stmt = con.createStatement();
@@ -70,7 +70,7 @@ public class database {
 
     public void login(String username, String password, HttpServletRequest request, HttpServletResponse response)
             throws ClassNotFoundException, SQLException, IOException, ServletException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         Connection con = DriverManager.getConnection("jdbc:mysql:3.144.240.183:3306//servlet_application", "root",
                 this.password);
         Statement stmt = con.createStatement();
@@ -102,7 +102,7 @@ public class database {
     }
 
     public void delete_row(String username) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         Connection con = DriverManager.getConnection("jdbc:mysql:3.144.240.183/:3306/servlet_application", "root",
                 this.password);
         Statement stmt = con.createStatement();
@@ -118,7 +118,7 @@ public class database {
 
     public void update_row(String username, String oldPassword, String newPassword)
             throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         Connection con = DriverManager.getConnection("jdbc:mysql:3.144.240.183//servlet_application", "root",
                 this.password);
         Statement stmt = con.createStatement();
